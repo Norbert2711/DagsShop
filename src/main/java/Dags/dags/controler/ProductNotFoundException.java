@@ -1,4 +1,4 @@
 package Dags.dags.controler;
 
-public class ProductNotFound extends Exception {
+public class ProductNotFoundException extends Exception {
 }

@@ -4,7 +4,6 @@ package Dags.dags.controler;
 import Dags.dags.domain.ProductsDto;
 import Dags.dags.mapper.ProductsMapper;
 import Dags.dags.service.DagsService;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,9 +28,9 @@ public class DagsController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "getProduct")
-    public ProductsDto getCop(@RequestParam Long productId) throws ProductNotFound {
+    public ProductsDto getProduct(@RequestParam Long productId) throws ProductNotFoundException {
         return productsMapper.mapToProductsDto(service.getProduct(productId)
-                .orElseThrow(ProductNotFound::new));
+                .orElseThrow(ProductNotFoundException::new));
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteProduct")

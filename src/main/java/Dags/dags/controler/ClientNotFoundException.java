@@ -1,4 +1,4 @@
 package Dags.dags.controler;
 
-public class ClientNotFoundException {
+public class ClientNotFoundException extends Exception {
 }
